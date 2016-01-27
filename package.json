@@ -1,7 +1,7 @@
 {
   "name": "preact-mdl",
   "amdName": "preactMdl",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A collection of Preact Components that encapsulate Google's Material Design Lite.",
   "main": "dist/preact-mdl.js",
   "minified:main": "dist/preact-mdl.min.js",
@@ -18,8 +18,8 @@
   },
   "keywords": [
     "preact",
-    "rich text",
-    "input"
+    "mdl",
+    "material design"
   ],
   "author": "Jason Miller <jason@developit.ca>",
   "license": "MIT",
