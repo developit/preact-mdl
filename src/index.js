@@ -1,10 +1,10 @@
 import { h, Component } from 'preact';
-import '../node_modules/material-design-lite/dist/material.min.css';
-import 'material-design-lite/material.js';
 
-// import mdl from 'exports?componentHandler!material-design-lite/material.js';
+const options = {};
 
-const mdl = window.componentHandler;
+export { options };
+
+const mdl = () => options.mdl || options.componentHandler || window.componentHandler;
 
 const RIPPLE_CLASS = 'js-ripple-effect';
 const MDL_PREFIX = s => MDL_NO_PREFIX[s] ? s : `mdl-${s}`;
@@ -146,19 +146,19 @@ export class MaterialComponent extends Component {
 	componentDidMount() {
 		if (this.base!==this.upgradedBase) {
 			if (this.upgradedBase) {
-				mdl.downgradeElements(this.upgradedBase);
+				mdl().downgradeElements(this.upgradedBase);
 			}
 			this.upgradedBase = null;
 			if (this.base && this.base.parentElement) {
 				this.upgradedBase = this.base;
-				mdl.upgradeElement(this.base);
+				mdl().upgradeElement(this.base);
 			}
 		}
 	}
 
 	componentWillUnmount() {
 		if (this.upgradedBase) {
-			mdl.downgradeElements(this.upgradedBase);
+			mdl().downgradeElements(this.upgradedBase);
 			this.upgradedBase = null;
 		}
 	}
@@ -809,6 +809,7 @@ export class Tooltip extends MaterialComponent {
 
 
 export default {
+	options,
 	Icon,
 	Button,
 	Card,
