@@ -6,7 +6,7 @@ import { Button } from '..';
 /*eslint-env browser,mocha*/
 /*global sinon,expect,chai*/
 
-describe('Markup', () => {
+describe('preact-mdl', () => {
 	let scratch;
 
 	before( () => {
