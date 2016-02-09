@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import babel from 'rollup-plugin-babel';
-import npm from 'rollup-plugin-npm';
+import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import discardComments from 'postcss-discard-comments';
@@ -31,7 +31,7 @@ export default {
 				['transform-react-jsx', { pragma: 'h' }]
 			]
 		}),
-		npm({
+		nodeResolve({
 			jsnext: true,
 			main: true,
 			skip: external
