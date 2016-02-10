@@ -283,6 +283,33 @@ extend(Card, {
 
 
 
+/** Dialogs */
+
+export class Dialog extends MaterialComponent {
+	component = 'dialog';
+	nodeName = 'dialog';
+}
+
+export class DialogTitle extends MaterialComponent {
+	component = 'dialog__title';
+}
+
+export class DialogContent extends MaterialComponent {
+	component = 'dialog__content';
+}
+
+export class DialogActions extends MaterialComponent {
+	component = 'dialog__actions';
+}
+
+extend(Dialog, {
+	Title: DialogTitle,
+	Content: DialogContent,
+	Actions: DialogActions
+});
+
+
+
 
 /** Layouts */
 
@@ -813,6 +840,7 @@ export default {
 	Icon,
 	Button,
 	Card,
+	Dialog,
 	Layout,
 	Navigation,
 	Tabs,
