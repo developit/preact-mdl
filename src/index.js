@@ -128,6 +128,7 @@ export class MaterialComponent extends Component {
 	createMdlClasses(props) {
 		let name = this.component,
 			c = [],
+			mapping = this.propClassMapping || {},
 			js = props.js!==false && (this.js || this.ripple);
 		if (name) c.push(name);
 		if (this.mdlClasses) c.push(...this.mdlClasses);
@@ -137,7 +138,7 @@ export class MaterialComponent extends Component {
 		if (js) c.push(`js-${name}`);
 		for (let i in props) {
 			if (props.hasOwnProperty(i) && props[i]===true) {
-				c.push(MDL_NO_PREFIX[i] ? i : `${name}--${i}`);
+				c.push(MDL_NO_PREFIX[i] ? i : (mapping[i] || `${name}--${i}`));
 			}
 		}
 		return c.map(MDL_PREFIX);
@@ -248,6 +249,9 @@ export class Card extends MaterialComponent {
 
 export class CardTitle extends MaterialComponent {
 	component = 'card__title';
+	propClassMapping = {
+		expand: 'card--expand'
+	};
 }
 
 export class CardTitleText extends MaterialComponent {
