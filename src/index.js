@@ -627,6 +627,28 @@ export class Slider extends MaterialComponent {
 }
 
 
+/** Snackbar
+ */
+
+export class Snackbar extends MaterialComponent {
+	component = 'snackbar';
+}
+
+export class SnackbarText extends MaterialComponent {
+	component = 'snackbar__text';
+}
+
+export class SnackbarAction extends MaterialComponent {
+	component = 'snackbar__action';
+	nodeName = 'button';
+}
+
+extend(Snackbar, {
+	Text: SnackbarText,
+	Action: SnackbarAction
+});
+
+
 
 
 /** @prop checked = false
@@ -856,6 +878,7 @@ export default {
 	Spinner,
 	Menu,
 	Slider,
+	Snackbar,
 	CheckBox,
 	Radio,
 	IconToggle,
