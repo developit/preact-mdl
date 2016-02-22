@@ -627,26 +627,24 @@ export class Slider extends MaterialComponent {
 }
 
 
+
+
 /** Snackbar
  */
 
 export class Snackbar extends MaterialComponent {
 	component = 'snackbar';
-}
+	js = true;
 
-export class SnackbarText extends MaterialComponent {
-	component = 'snackbar__text';
+	mdlRender(props) {
+		return (
+			<div {...props}>
+				<div class="mdl-snackbar__text"></div>
+				<button class="mdl-snackbar__action" type="button"></button>
+			</div>
+		);
+	}
 }
-
-export class SnackbarAction extends MaterialComponent {
-	component = 'snackbar__action';
-	nodeName = 'button';
-}
-
-extend(Snackbar, {
-	Text: SnackbarText,
-	Action: SnackbarAction
-});
 
 
 
