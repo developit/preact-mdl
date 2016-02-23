@@ -5,6 +5,8 @@
 
 A collection of [Preact] Components that encapsulate Google's [Material Design Lite].
 
+> **Quick Start**: Grab the [JSFiddle App Skeleton](https://jsfiddle.net/developit/weq28uq3/).
+
 
 ## What does it look like?
 
