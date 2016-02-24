@@ -32,10 +32,10 @@
   },
   "homepage": "https://github.com/developit/preact-mdl",
   "peerDependencies": {
-    "preact": "^3.2.0"
+    "preact": "*"
   },
   "optionalDependencies": {
-    "preact": "^3.2.0"
+    "preact": "*"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",
@@ -63,9 +63,9 @@
     "mkdirp": "^0.5.1",
     "mocha": "^2.4.5",
     "npm-run-all": "^1.5.1",
-    "preact": "^3.2.0",
     "phantomjs": "^2.1.3",
     "phantomjs-prebuilt": "^2.1.4",
+    "preact": "^3.4.0",
     "preact-jsx-chai": "^1.1.1",
     "pretty-bytes-cli": "^1.0.0",
     "rollup": "^0.25.4",
