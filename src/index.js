@@ -827,7 +827,7 @@ export class TextField extends MaterialComponent {
 			// field.children[0].children = [props.value];
 		}
 		if (props.expandable===true) {
-			field.class = 'mdl-textfield__expandable-holder';
+			(field.attributes = field.attributes || {}).class = 'mdl-textfield__expandable-holder';
 			field = (
 				<div>
 					<label class="mdl-button mdl-js-button mdl-button--icon" for={id}>
