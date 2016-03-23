@@ -396,6 +396,9 @@ extend(Layout, {
 export class Navigation extends MaterialComponent {
 	component = 'navigation';
 	nodeName = 'nav';
+	propClassMapping = {
+	  	'large-screen-only': 'layout--large-screen-only'
+	}
 
 	mdlRender(props, state) {
 		let r = super.mdlRender(props, state);
