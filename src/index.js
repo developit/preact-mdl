@@ -815,14 +815,17 @@ export class TextField extends MaterialComponent {
 
 	mdlRender(props={}) {
 		let id = props.id || this.id,
+			errorMessage = props.errorMessage,
 			p = extend({}, props);
 
 		delete p.class;
+		delete p.errorMessage;
 
 		let field = (
 			<div>
 				<input type="text" class="mdl-textfield__input" id={id} value="" {...p} />
 				<label class="mdl-textfield__label" for={id}>{ props.label || props.children }</label>
+				{errorMessage ? <span class="mdl-textfield__error">{errorMessage}</span> : null}
 			</div>
 		);
 		if (props.multiline) {
