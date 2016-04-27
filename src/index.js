@@ -766,6 +766,10 @@ export class Switch extends MaterialComponent {
 			<label {...props}>
 				<input type="checkbox" class="mdl-switch__input" checked={ props.checked } disabled={ props.disabled } {...evt} />
 				<span class="mdl-switch__label">{ props.children }</span>
+				<div class="mdl-switch__track"></div>
+				<div class="mdl-switch__thumb">
+					<span class="mdl-switch__focus-helper"></span>
+				</div>
 			</label>
 		);
 	}
