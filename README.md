@@ -7,6 +7,9 @@ A collection of [Preact] Components that encapsulate Google's [Material Design L
 
 > **Quick Start**: Grab the [JSFiddle App Skeleton](https://jsfiddle.net/developit/weq28uq3/).
 
+## Installation
+
+      $ npm install --save material-design-lite preact-mdl
 
 ## What does it look like?
 
