@@ -794,6 +794,20 @@ export class TableCell extends MaterialComponent {
 Table.Cell = TableCell;
 
 
+export class List extends MaterialComponent {
+	component = 'list';
+	nodeName = 'ul';
+}
+
+/** @prop two-line = false
+*	@prop three-line = false
+ */
+export class ListItem extends MaterialComponent {
+	component = 'list__item';
+	nodeName = 'li';
+}
+
+List.Item = ListItem;
 
 
 /** @prop floating-label = false
@@ -893,5 +907,7 @@ export default {
 	Switch,
 	Table,
 	TextField,
-	Tooltip
+	Tooltip,
+	List,
+	ListItem
 };
