@@ -642,7 +642,7 @@ export class Snackbar extends MaterialComponent {
 	mdlRender(props) {
 		return (
 			<div {...props}>
-				<div class="mdl-snackbar__text"></div>
+				<div class="mdl-snackbar__text">{props.children}</div>
 				<button class="mdl-snackbar__action" type="button"></button>
 			</div>
 		);
