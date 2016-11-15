@@ -6,7 +6,8 @@
   "main": "dist/preact-mdl.js",
   "minified:main": "dist/preact-mdl.min.js",
   "scripts": {
-    "build": "npm-run-all transpile minify size",
+    "copy-typescript-definition": "copyfiles -f src/index.d.ts dist",
+    "build": "npm-run-all transpile copy-typescript-definition minify size",
     "transpile": "rollup -c rollup.config.js",
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_minified_main -p relative --in-source-map ${npm_package_main}.map --source-map ${npm_package_minified_main}.map",
     "size": "echo \"gzip size: $(gzip-size $npm_package_minified_main | pretty-bytes)\"",
@@ -16,6 +17,7 @@
     "prepublish": "npm-run-all build test",
     "release": "npm run -s build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
+  "typings": "./dist/index.d.ts",
   "keywords": [
     "preact",
     "mdl",
@@ -50,6 +52,7 @@
     "babel-preset-es2015-loose-rollup": "^7.0.0",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
+    "copyfiles": "^1.0.0",
     "eslint": "^2.2.0",
     "eslint-plugin-react": "^4.3.0",
     "gzip-size-cli": "^1.0.0",
