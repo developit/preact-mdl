@@ -6,6 +6,8 @@
 A collection of [Preact] Components that encapsulate Google's [Material Design Lite].
 
 > **Quick Start**: Grab the [JSFiddle App Skeleton](https://jsfiddle.net/developit/weq28uq3/).
+>
+> **Using TypeScript?** [preact-mdl-example](https://github.com/tbekolay/preact-mdl-example) is an instant full project setup.
 
 ## Installation
 
