@@ -32,7 +32,10 @@ export interface ButtonProps extends HTMLProps {
 export class Button extends MaterialComponent<ButtonProps, {}> { }
 
 /** Cards */
-export class Card extends MaterialComponent<HTMLProps, {}> { }
+export interface CardProps extends HTMLProps {
+    shadow?: number;
+}
+export class Card extends MaterialComponent<CardProps, {}> { }
 export class CardActions extends MaterialComponent<HTMLProps, {}> { }
 export class CardMedia extends MaterialComponent<HTMLProps, {}> { }
 export class CardMenu extends MaterialComponent<HTMLProps, {}> { }
@@ -243,6 +246,7 @@ export interface TextFieldProps extends HTMLProps {
     errorMessage?: string;
     expandable?: boolean;
     multiline?: boolean;
+    onSearch?: ((event) => boolean|void);
 }
 export class TextField extends MaterialComponent<TextFieldProps, {}> { }
 
