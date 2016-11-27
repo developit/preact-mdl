@@ -24,7 +24,7 @@ _Here's some live-action demos:_
 
 <img src="https://i.gyazo.com/352cc02ba18a811ee36a8a4837688023.gif" width="254" />
 <img src="https://i.imgur.com/I6RDmBm.gif" width="122" />
- <img src="https://i.gyazo.com/70724d88b290ff47c793cf6f9ddc13f1.gif" width="107" />
+<img src="https://i.gyazo.com/70724d88b290ff47c793cf6f9ddc13f1.gif" width="107" />
 
 ## Usage
 
@@ -67,7 +67,6 @@ export default class MyButton extends Component {
 ## Documentation
 
 Documentation is on it's way!
-
 
 For now, browse these Open Source projects using `preact-mdl`:
 
