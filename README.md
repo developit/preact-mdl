@@ -24,12 +24,50 @@ _Here's some live-action demos:_
 
 <img src="https://i.gyazo.com/352cc02ba18a811ee36a8a4837688023.gif" width="254" />
 <img src="https://i.imgur.com/I6RDmBm.gif" width="122" />
-<img src="https://i.gyazo.com/70724d88b290ff47c793cf6f9ddc13f1.gif" width="107" />
+ <img src="https://i.gyazo.com/70724d88b290ff47c793cf6f9ddc13f1.gif" width="107" />
 
+## Usage
+
+* Add MDL stylesheets to your html
+```html 
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <title>Preact-mdl Example</title>
+</head>
+<body style="height: 100%; width: 100%;">
+  <script src="/bundle.js"></script>
+</body>
+</html>
+```
+
+* Import mdl module and components from preact-mdl
+
+```JavaScript
+import { h, Component } from 'preact';
+import mdl from 'material-design-lite/material';
+import { Button } from 'preact-mdl';
+
+export default class MyButton extends Component {
+  render() {
+    return(
+      <div>
+        <Button>I am button!</Button>
+      </div>
+    )
+  }
+}
+
+```
 
 ## Documentation
 
 Documentation is on it's way!
+
 
 For now, browse these Open Source projects using `preact-mdl`:
 
