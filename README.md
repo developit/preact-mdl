@@ -72,6 +72,7 @@ For now, browse these Open Source projects using `preact-mdl`:
 
 - **[Documentation Viewer](https://github.com/developit/documentation-viewer/)**
 - **[Nectarine.rocks](https://github.com/developit/nectarine.rocks/)**
+- **[Preact Simple Starter](https://github.com/ooade/PreactSimpleStarter)**
 - _[add yours!](https://github.com/developit/preact-mdl/issues)_
 
 
