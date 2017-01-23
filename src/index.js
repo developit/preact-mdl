@@ -292,6 +292,12 @@ extend(Card, {
 export class Dialog extends MaterialComponent {
 	component = 'dialog';
 	nodeName = 'dialog';
+	open = () => {
+		this.base.show();
+	}
+	close = () => {
+		this.base.close && this.base.close();
+	}
 }
 
 export class DialogTitle extends MaterialComponent {
