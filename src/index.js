@@ -283,9 +283,6 @@ export class Dialog extends MaterialComponent {
 	showModal = () => {
 		this.base.showModal();
 	}
-	open = () => {
-		this.base.open;
-	}
 	close = () => {
 		this.base.close && this.base.close();
 	}
