@@ -108,21 +108,6 @@ export class MaterialComponent extends Component {
 				}
 			}
 		}
-
-		for (let i=c.length; i--; ) {
-			if (c[i].className && c[i].className.match(/\bmdl-[a-z0-9_-]+__ripple-container\b/g)) {
-				let s = c[i].firstElementChild;
-				(r.children = r.children || []).splice(i, 0, (
-					<span class={ c[i].getAttribute('class') } data-upgraded={ c[i].getAttribute('data-upgraded') }>
-						<span class={ s.getAttribute('class') } style={ s.getAttribute('style') } />
-					</span>
-				));
-				foundRipple = true;
-			}
-			else if (r && r.children && r.children[i] && typeof r.children[i].nodeName==='string') {
-				this.preserveMdlDom(c[i], r.children[i]);
-			}
-		}
 	}
 
 	createMdlClasses(props) {
