@@ -1,7 +1,7 @@
 {
   "name": "preact-mdl",
   "amdName": "preactMdl",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A collection of Preact Components that encapsulate Google's Material Design Lite.",
   "main": "dist/preact-mdl.js",
   "minified:main": "dist/preact-mdl.min.js",
