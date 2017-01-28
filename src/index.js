@@ -1,23 +1,38 @@
 import { h, Component } from 'preact';
 
-const options = {};
+export const options = {};
 
-export { options };
-
-const mdl = () => options.mdl || options.componentHandler || window.componentHandler;
+function mdl() {
+	return options.mdl || options.componentHandler || window.componentHandler;
+}
 
 const RIPPLE_CLASS = 'js-ripple-effect';
+
 const MDL_PREFIX = s => MDL_NO_PREFIX[s] ? s : `mdl-${s}`;
 
 const MDL_NO_PREFIX = { 'is-active': true };
 
 let uidCounter = 1;
-let uid = () => ++uidCounter;
 
-let extend = (base, props) => {
+function uid() {
+	return ++uidCounter;
+}
+
+function extend(base, props) {
 	for (let i in props) if (props.hasOwnProperty(i)) base[i] = props[i];
 	return base;
-};
+}
+
+function setClass(attributes, value, append) {
+	let cl = getClass(attributes);
+	if (attributes.className) delete attributes.className;
+	if (append) value = cl ? (cl + ' ' + value) : value;
+	attributes.class = value;
+}
+
+function getClass(attributes) {
+	return attributes.class || attributes.className;
+}
 
 let propMaps = {
 	disabled({ attributes }) {
@@ -28,17 +43,17 @@ let propMaps = {
 	badge({ attributes }) {
 		attributes['data-badge'] = attributes.badge;
 		delete attributes.badge;
-		attributes.class += (attributes.class ? ' ' : '') + 'mdl-badge';
+		setClass(attributes, 'mdl-badge', true);
 	},
 	active({ attributes }) {
 		if (attributes.active) {
-			attributes.class += (attributes.class ? ' ' : '') + 'is-active';
+			setClass(attributes, 'is-active', true);
 		}
 	},
 	shadow({ attributes }) {
 		let d = parseFloat(attributes.shadow)|0,
-			c = attributes.class.replace(/\smdl-[^ ]+--shadow\b/g,'');
-		attributes.class = c + (c ? ' ' : '') + `mdl-shadow--${d}dp`;
+			c = getClass(attributes).replace(/\smdl-[^ ]+--shadow\b/g,'');
+		setClass(attributes, c + (c ? ' ' : '') + `mdl-shadow--${d}dp`);
 	}
 };
 
@@ -57,7 +72,7 @@ export class MaterialComponent extends Component {
 		let r = this.mdlRender(props, state);
 		if (this.nodeName) r.nodeName = this.nodeName;
 		if (!r.attributes) r.attributes = {};
-		r.attributes.class = this.createMdlClasses(props).concat(r.attributes.class || []).join(' ');
+		r.attributes.class = this.createMdlClasses(props).concat(r.attributes.class || [], r.attributes.className || []).join(' ');
 		for (let i in propMaps) if (propMaps.hasOwnProperty(i)) {
 			if (props.hasOwnProperty(i)) {
 				propMaps[i](r);
@@ -82,6 +97,7 @@ export class MaterialComponent extends Component {
 			],
 			v = base.getAttribute('data-upgraded'),
 			a = r.attributes,
+			cl = getClass(a) || '',
 			foundRipple = false;
 
 		if (!a) a = {};
@@ -99,15 +115,17 @@ export class MaterialComponent extends Component {
 		for (let i=0; i<persist.length; i++) {
 			if (base.classList.contains(persist[i])) {
 				if (typeof a.class==='string') {
-					if (a.class.indexOf(persist[i])===-1) {
-						a.class += ' ' + persist[i];
+					if (cl.indexOf(persist[i])===-1) {
+						cl += ' ' + persist[i];
 					}
 				}
 				else {
-					(a.class = a.class || {})[persist[i]] = true;
+					(cl || (cl = {}))[persist[i]] = true;
 				}
 			}
 		}
+
+		setClass(a, cl);
 	}
 
 	createMdlClasses(props) {
@@ -189,9 +207,10 @@ let upgradeQueue = {
 /** Material Icon */
 export class Icon extends MaterialComponent {
 	mdlRender(props) {
-		let c = props.class || '',
+		let c = getClass(props) || '',
 			icon = String(props.icon || props.children).replace(/[ -]/g, '_');
 		delete props.icon;
+		delete props.className;
 		if (typeof c==='string') {
 			c = 'material-icons ' + c;
 		}
@@ -397,9 +416,9 @@ export class Navigation extends MaterialComponent {
 	mdlRender(props, state) {
 		let r = super.mdlRender(props, state);
 		r.children.forEach( item => {
-			let c = item.attributes.class || '';
+			let c = getClass(item.attributes) || '';
 			if (!c.match(/\bmdl-navigation__link\b/g)) {
-				item.attributes.class = c + ' mdl-navigation__link';
+				setClass(item.attributes, ' mdl-navigation__link', true);
 			}
 		});
 		return r;
@@ -855,8 +874,9 @@ export class TextField extends MaterialComponent {
 				</div>
 			);
 		}
-		if (props.class) {
-			(field.attributes = field.attributes || {}).class = props.class;
+		let cl = getClass(props);
+		if (cl) {
+			(field.attributes = field.attributes || {}).class = cl;
 		}
 		return field;
 	}
