@@ -883,9 +883,6 @@ export class TextField extends MaterialComponent {
 			(field.attributes = field.attributes || {}).class = cl;
 		}
 
-		if (errorMessage) {
-			setClass((field.attributes = field.attributes || {}), 'is-invalid', true);
-		}
 		return field;
 	}
 }
