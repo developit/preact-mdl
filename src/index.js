@@ -826,6 +826,7 @@ List.Item = ListItem;
 /** @prop floating-label = false
 *	@prop multiline = false
 *	@prop expandable = false
+*	@prop errorMessage = null
 *	@prop icon (used with expandable)
  */
 export class TextField extends MaterialComponent {
@@ -877,6 +878,10 @@ export class TextField extends MaterialComponent {
 		let cl = getClass(props);
 		if (cl) {
 			(field.attributes = field.attributes || {}).class = cl;
+		}
+
+		if (errorMessage) {
+			setClass((field.attributes = field.attributes || {}), 'is-invalid', true);
 		}
 		return field;
 	}
