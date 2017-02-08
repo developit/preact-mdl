@@ -242,7 +242,7 @@ export namespace List {
 
 /** TextField */
 export interface TextFieldProps extends HTMLProps {
-    "floating-label"?: boolean;
+    floatingLabel?: boolean;
     errorMessage?: string;
     expandable?: boolean;
     multiline?: boolean;
