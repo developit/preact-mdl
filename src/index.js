@@ -823,7 +823,7 @@ export class ListItem extends MaterialComponent {
 List.Item = ListItem;
 
 
-/** @prop floating-label = false
+/** @prop floatingLabel = false
 *	@prop multiline = false
 *	@prop expandable = false
 *	@prop errorMessage = null
@@ -848,10 +848,12 @@ export class TextField extends MaterialComponent {
 	mdlRender(props={}) {
 		let id = props.id || this.id,
 			errorMessage = props.errorMessage,
+			floatingLabel = props.floatingLabel,
 			p = extend({}, props);
 
 		delete p.class;
 		delete p.errorMessage;
+		delete p.floatingLabel;
 
 		let field = (
 			<div>
@@ -883,6 +885,11 @@ export class TextField extends MaterialComponent {
 		if (errorMessage) {
 			setClass((field.attributes = field.attributes || {}), 'is-invalid', true);
 		}
+
+		if (floatingLabel) {
+			setClass((field.attributes = field.attributes || {}), 'mdl-textfield--floating-label', true);
+		}
+
 		return field;
 	}
 }
