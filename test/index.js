@@ -40,18 +40,5 @@ describe('preact-mdl', () => {
 			let field = <TextField class="custom_class"/>;
 			expect(field).to.contain('custom_class');
 		});
-
-		it('should display an errorMessage if exists', () => {
-			let field = <TextField errorMessage="error message" />;
-			expect(field).to.contain('error message');
-			expect(field).to.contain('is-invalid');
-		});
-
-		it('should display an errorMessage with custom class', () => {
-			let field = <TextField errorMessage="error message" class="custom_class"/>;
-			expect(field).to.contain('error message');
-			expect(field).to.contain('is-invalid');
-			expect(field).to.contain('custom_class');
-		});
 	});
 });

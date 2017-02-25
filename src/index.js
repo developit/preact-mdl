@@ -843,6 +843,9 @@ export class TextField extends MaterialComponent {
 		if (input && input.value && input.value!==this.props.value) {
 			input.value = this.props.value;
 		}
+        if (input && input.setCustomValidity) {
+            input.setCustomValidity(this.props.errorMessage || "");
+        }
 	}
 
 	mdlRender(props={}) {
@@ -880,9 +883,6 @@ export class TextField extends MaterialComponent {
 			(field.attributes = field.attributes || {}).class = cl;
 		}
 
-		if (errorMessage) {
-			setClass((field.attributes = field.attributes || {}), 'is-invalid', true);
-		}
 		return field;
 	}
 }
