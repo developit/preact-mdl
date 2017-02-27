@@ -843,9 +843,9 @@ export class TextField extends MaterialComponent {
 		if (input && input.value && input.value!==this.props.value) {
 			input.value = this.props.value;
 		}
-        if (input && input.setCustomValidity) {
-            input.setCustomValidity(this.props.errorMessage || "");
-        }
+		if (input && input.setCustomValidity) {
+			input.setCustomValidity(this.props.errorMessage || "");
+		}
 	}
 
 	mdlRender(props={}) {
