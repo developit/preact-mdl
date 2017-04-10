@@ -224,14 +224,14 @@ export class Icon extends MaterialComponent {
 
 
 
-/** @prop primary = false
- *	@prop accent = false
- *	@prop colored = false
- *	@prop raised = false
- *	@prop icon = false
- *	@prop fab = false
- *	@prop mini-fab = false
- *	@prop disabled = false
+/** @param primary = false
+ *	@param accent = false
+ *	@param colored = false
+ *	@param raised = false
+ *	@param icon = false
+ *	@param fab = false
+ *	@param mini-fab = false
+ *	@param disabled = false
  */
 export class Button extends MaterialComponent {
 	component = 'button';
@@ -330,18 +330,18 @@ extend(Dialog, {
 
 /** Layouts */
 
-/** @prop fixed-header = false
-*	@prop fixed-drawer = false
-*	@prop overlay-drawer-button = false
-*	@prop fixed-tabs = false
+/** @param fixed-header = false
+ *	@param fixed-drawer = false
+ *	@param overlay-drawer-button = false
+ *	@param fixed-tabs = false
  */
 export class Layout extends MaterialComponent {
 	component = 'layout';
 	js = true;
 }
 
-/** @prop waterfall = false
- *	@prop scroll = false
+/** @param waterfall = false
+ *	@param scroll = false
  */
 export class LayoutHeader extends MaterialComponent {
 	component = 'layout__header';
@@ -376,13 +376,13 @@ export class LayoutTabBar extends MaterialComponent {
 	ripple = false;
 }
 
-/** @prop active */
+/** @param active */
 export class LayoutTab extends MaterialComponent {
 	component = 'layout__tab';
 	nodeName = 'a';
 }
 
-/** @prop active */
+/** @param active */
 export class LayoutTabPanel extends MaterialComponent {
 	component = 'layout__tab-panel';
 
@@ -405,7 +405,7 @@ extend(Layout, {
 
 
 
-/** @prop large-screen-only = false */
+/** @param large-screen-only = false */
 export class Navigation extends MaterialComponent {
 	component = 'navigation';
 	nodeName = 'nav';
@@ -547,7 +547,7 @@ extend(MiniFooter, {
 
 
 /** Responsive Grid
- *	@prop no-spacing = false
+ *	@param no-spacing = false
  */
 export class Grid extends MaterialComponent {
 	component = 'grid';
@@ -563,7 +563,7 @@ Grid.Cell = Cell;
 
 
 
-/** @prop indeterminate = false */
+/** @param indeterminate = false */
 export class Progress extends MaterialComponent {
 	component = 'progress';
 	js = true;
@@ -590,8 +590,8 @@ export class Progress extends MaterialComponent {
 
 
 
-/** @prop active = false
- *	@prop single-color = false
+/** @param active = false
+ *	@param single-color = false
  */
 export class Spinner extends MaterialComponent {
 	component = 'spinner';
@@ -603,10 +603,10 @@ export class Spinner extends MaterialComponent {
 
 
 
-/** @prop bottom-left = true
- *	@prop bottom-right = false
- *	@prop top-left = false
- *	@prop top-right = false
+/** @param bottom-left = true
+ *	@param bottom-right = false
+ *	@param top-left = false
+ *	@param top-right = false
  */
 export class Menu extends MaterialComponent {
 	component = 'menu';
@@ -615,7 +615,7 @@ export class Menu extends MaterialComponent {
 	ripple = true;
 }
 
-/** @prop disabled = false */
+/** @param disabled = false */
 export class MenuItem extends MaterialComponent {
 	component = 'menu__item';
 	nodeName = 'li';
@@ -627,11 +627,11 @@ Menu.Item = MenuItem;
 
 
 
-/** @prop min = 0
- *	@prop max = 100
- *	@prop value = 0
- *	@prop tabindex = 0
- *	@prop disabled = false
+/** @param min = 0
+ *	@param max = 100
+ *	@param value = 0
+ *	@param tabindex = 0
+ *	@param disabled = false
  */
 export class Slider extends MaterialComponent {
 	component = 'slider';
@@ -665,8 +665,8 @@ export class Snackbar extends MaterialComponent {
 
 
 
-/** @prop checked = false
- *	@prop disabled = false
+/** @param checked = false
+ *	@param disabled = false
  */
 export class CheckBox extends MaterialComponent {
 	component = 'checkbox';
@@ -699,10 +699,10 @@ export class CheckBox extends MaterialComponent {
 
 
 
-/** @prop name (required)
-*	@prop value (required)
-*	@prop checked = false
-  *	@prop disabled = false
+/** @param name (required)
+*	@param value (required)
+*	@param checked = false
+  *	@param disabled = false
  */
 export class Radio extends MaterialComponent {
 	component = 'radio';
@@ -726,8 +726,8 @@ export class Radio extends MaterialComponent {
 
 
 
-/** @prop checked = false
- *	@prop disabled = false
+/** @param checked = false
+ *	@param disabled = false
  */
 export class IconToggle extends MaterialComponent {
 	component = 'icon-toggle';
@@ -751,8 +751,8 @@ export class IconToggle extends MaterialComponent {
 
 
 
-/** @prop checked = false
- *	@prop disabled = false
+/** @param checked = false
+ *	@param disabled = false
  */
 export class Switch extends MaterialComponent {
 	component = 'switch';
@@ -791,14 +791,14 @@ export class Switch extends MaterialComponent {
 
 
 
-/** @prop selectable = false */
+/** @param selectable = false */
 export class Table extends MaterialComponent {
 	component = 'data-table';
 	nodeName = 'table';
 	js = true;
 }
 
-/** @prop non-numeric = false */
+/** @param non-numeric = false */
 export class TableCell extends MaterialComponent {
 	component = 'data-table__cell';
 	nodeName = 'td';
@@ -812,8 +812,8 @@ export class List extends MaterialComponent {
 	nodeName = 'ul';
 }
 
-/** @prop two-line = false
-*	@prop three-line = false
+/** @param two-line = false
+*	@param three-line = false
  */
 export class ListItem extends MaterialComponent {
 	component = 'list__item';
@@ -823,11 +823,11 @@ export class ListItem extends MaterialComponent {
 List.Item = ListItem;
 
 
-/** @prop floating-label = false
-*	@prop multiline = false
-*	@prop expandable = false
-*	@prop errorMessage = null
-*	@prop icon (used with expandable)
+/** @param floating-label = false
+*	@param multiline = false
+*	@param expandable = false
+*	@param errorMessage = null
+*	@param icon (used with expandable)
  */
 export class TextField extends MaterialComponent {
 	component = 'textfield';
@@ -892,8 +892,8 @@ export class TextField extends MaterialComponent {
 
 
 
-/** @prop for [id]
- *	@prop large = false
+/** @param for [id]
+ *	@param large = false
  */
 export class Tooltip extends MaterialComponent {
 	component = 'tooltip';
