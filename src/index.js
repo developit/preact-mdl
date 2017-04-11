@@ -204,7 +204,16 @@ let upgradeQueue = {
 
 
 
-/** Material Icon */
+/**
+ * @class Icon
+ * @desc An Icon in the Material Icons font. Note that you must include the font, usually by Google Fonts
+ * @param icon The icon to render. Can also be specified in the Icon text
+ *
+ * @example
+ * <Icon icon="menu" />
+ * @example
+ * <Icon>menu</Icon>
+ */
 export class Icon extends MaterialComponent {
 	mdlRender(props) {
 		let c = getClass(props) || '',
@@ -224,7 +233,13 @@ export class Icon extends MaterialComponent {
 
 
 
-/** @param primary = false
+/** @class Button
+ *  @desc A material button
+ *
+ *  @example
+ *  <Button onClick={this.handleClick}>Hello World</Button>
+ *
+ *  @param primary = false
  *	@param accent = false
  *	@param colored = false
  *	@param raised = false
@@ -245,8 +260,11 @@ export class Button extends MaterialComponent {
 
 
 
-/** Cards */
-
+/**
+ * @class Card
+ * @desc Cards are how you represent blocks of infomation. From the Material Design Specifications: A card is a sheet of material that serves as an entry point to more detailed information.
+ * TODO: example
+ */
 export class Card extends MaterialComponent {
 	component = 'card';
 }
@@ -330,10 +348,21 @@ extend(Dialog, {
 
 /** Layouts */
 
-/** @param fixed-header = false
+/**
+ *  @class Layout
+ *  @desc Use a layout to specify how your app will use some of material's aspects. Your app should reside in this component. If you want a fixed header, drawer, or tabs, specify them here.
+ *  @param fixed-header = false
  *	@param fixed-drawer = false
  *	@param overlay-drawer-button = false
  *	@param fixed-tabs = false
+ *
+ *  @example
+ *  <Layout fixed-header>
+ *		<Layout.Header>
+ *      ...
+ *		</Layout.Header>
+ *		...
+ *  </Layout>
  */
 export class Layout extends MaterialComponent {
 	component = 'layout';
