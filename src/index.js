@@ -416,8 +416,10 @@ export class Navigation extends MaterialComponent {
 	mdlRender(props, state) {
 		let r = super.mdlRender(props, state);
 		r.children.forEach( item => {
-			let c = getClass(item.attributes) || '';
+			if (!item) return item;
+			let c = item.attributes && getClass(item.attributes) || '';
 			if (!c.match(/\bmdl-navigation__link\b/g)) {
+				if (!item.attributes) item.attributes = {};
 				setClass(item.attributes, ' mdl-navigation__link', true);
 			}
 		});
