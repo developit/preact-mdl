@@ -245,7 +245,7 @@ Snackbar
 
 **Parameters**
 
--   `args` **...any** 
+-   `args` **...this** 
 -   `floating-label`  = false
 -   `multiline`  = false
 -   `expandable`  = false
