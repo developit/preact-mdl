@@ -9,10 +9,10 @@ export class MaterialComponent<PropsType, StateType> extends preact.Component<Pr
     ripple: boolean;
     upgradedBase: HTMLElement;
 
-    createMdlClasses(props: PropsType & preact.ComponentProps): string[];
-    mdlRender(props: PropsType & preact.ComponentProps): preact.VNode;
+    createMdlClasses(props: PropsType & preact.ComponentProps<any>): string[];
+    mdlRender(props: PropsType & preact.ComponentProps<any>): preact.VNode;
     preserveMdlDom(base: HTMLElement, r: HTMLElement): void;
-    render(props: PropsType & preact.ComponentProps, state: StateType): preact.VNode;
+    render(props: PropsType & preact.ComponentProps<any>, state: StateType): preact.VNode;
 }
 
 export interface HTMLProps extends JSX.HTMLAttributes { }
