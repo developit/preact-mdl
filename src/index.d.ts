@@ -96,7 +96,7 @@ export class LayoutTitle extends MaterialComponent<HTMLProps, {}> { }
 export namespace Layout {
     var Content: typeof LayoutContent;
     var Drawer: typeof LayoutDrawer;
-    var Header: typeof Layout;
+    var Header: typeof LayoutHeader;
     var HeaderRow: typeof LayoutHeaderRow;
     var Spacer: typeof LayoutSpacer;
     var Tab: typeof LayoutTab;
