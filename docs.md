@@ -33,11 +33,27 @@
 
 **Extends MaterialComponent**
 
-Material Icon
+An Icon in the Material Icons font. Note that you must include the font, usually by Google Fonts
+
+**Parameters**
+
+-   `icon`  The icon to render. Can also be specified in the Icon text
+
+**Examples**
+
+```javascript
+<Icon icon="menu" />
+```
+
+```javascript
+<Icon>menu</Icon>
+```
 
 ## Button
 
 **Extends MaterialComponent**
+
+A material button
 
 **Parameters**
 
@@ -50,11 +66,18 @@ Material Icon
 -   `mini-fab`  = false
 -   `disabled`  = false
 
+**Examples**
+
+```javascript
+<Button onClick={this.handleClick}>Hello World</Button>
+```
+
 ## Card
 
 **Extends MaterialComponent**
 
-Cards
+Cards are how you represent blocks of infomation. From the Material Design Specifications: A card is a sheet of material that serves as an entry point to more detailed information.
+TODO: example
 
 ## Dialog
 
@@ -66,12 +89,25 @@ Dialogs
 
 **Extends MaterialComponent**
 
+Use a layout to specify how your app will use some of material's aspects. Your app should reside in this component. If you want a fixed header, drawer, or tabs, specify them here.
+
 **Parameters**
 
 -   `fixed-header`  = false
 -   `fixed-drawer`  = false
 -   `overlay-drawer-button`  = false
 -   `fixed-tabs`  = false
+
+**Examples**
+
+```javascript
+<Layout fixed-header>
+	<Layout.Header>
+     ...
+	</Layout.Header>
+	...
+ </Layout>
+```
 
 ## Layout
 
