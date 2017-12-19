@@ -25,7 +25,6 @@ function extend(base, props) {
 
 function setClass(attributes, value, append) {
 	let cl = getClass(attributes);
-	if (attributes.className) delete attributes.className;
 	if (append) value = cl ? (cl + ' ' + value) : value;
 	attributes.class = value;
 }
