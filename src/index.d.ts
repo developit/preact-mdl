@@ -9,16 +9,19 @@ export class MaterialComponent<PropsType, StateType> extends preact.Component<Pr
     ripple: boolean;
     upgradedBase: HTMLElement;
 
-    createMdlClasses(props: PropsType & preact.ComponentProps): string[];
-    mdlRender(props: PropsType & preact.ComponentProps): preact.VNode;
+    createMdlClasses(props: PropsType & preact.ComponentProps<this>): string[];
+    mdlRender(props: PropsType & preact.ComponentProps<this>): preact.VNode;
     preserveMdlDom(base: HTMLElement, r: HTMLElement): void;
-    render(props: PropsType & preact.ComponentProps, state: StateType): preact.VNode;
+    render(props: PropsType & preact.ComponentProps<this>, state: StateType): preact.VNode;
 }
 
 export interface HTMLProps extends JSX.HTMLAttributes { }
 
 /** Icon */
-export class Icon extends MaterialComponent<HTMLProps, {}> { }
+export interface IconProps extends HTMLProps {
+    badge?: string;
+}
+export class Icon extends MaterialComponent<IconProps, {}> { }
 
 /** Button */
 export interface ButtonProps extends HTMLProps {
@@ -28,6 +31,7 @@ export interface ButtonProps extends HTMLProps {
     "mini-fab"?: boolean;
     primary?: boolean;
     raised?: boolean;
+    ripple?: boolean;
 }
 export class Button extends MaterialComponent<ButtonProps, {}> { }
 
@@ -92,7 +96,7 @@ export class LayoutTitle extends MaterialComponent<HTMLProps, {}> { }
 export namespace Layout {
     var Content: typeof LayoutContent;
     var Drawer: typeof LayoutDrawer;
-    var Header: typeof Layout;
+    var Header: typeof LayoutHeader;
     var HeaderRow: typeof LayoutHeaderRow;
     var Spacer: typeof LayoutSpacer;
     var Tab: typeof LayoutTab;
@@ -115,9 +119,15 @@ export namespace Navigation {
 
 /** Tabs */
 export class Tabs extends MaterialComponent<HTMLProps, {}> { }
-export class Tab extends MaterialComponent<HTMLProps, {}> { }
+export interface TabProps extends HTMLProps {
+    active?: boolean;
+}
+export class Tab extends MaterialComponent<TabProps, {}> { }
 export class TabBar extends MaterialComponent<HTMLProps, {}> { }
-export class TabPanel extends MaterialComponent<HTMLProps, {}> { }
+export interface TabPanelProps extends HTMLProps {
+    active?: boolean;
+}
+export class TabPanel extends MaterialComponent<TabPanelProps, {}> { }
 export namespace Tabs {
     var Bar: typeof TabBar;
     var Panel: typeof TabPanel;
@@ -166,6 +176,7 @@ export class Progress extends MaterialComponent<ProgressProps, {}> { }
 /** Spinner */
 export interface SpinnerProps extends HTMLProps {
     "single-color"?: boolean;
+    active?: boolean;
 }
 export class Spinner extends MaterialComponent<SpinnerProps, {}> { }
 
@@ -175,6 +186,7 @@ export interface MenuProps extends HTMLProps {
     "bottom-right"?: boolean;
     "top-left"?: boolean;
     "top-right"?: boolean;
+    ripple?: boolean;
 }
 export class Menu extends MaterialComponent<MenuProps, {}> { }
 export class MenuItem extends MaterialComponent<HTMLProps, {}> { }
@@ -193,7 +205,10 @@ export class Slider extends MaterialComponent<SliderProps, {}> { }
 export class Snackbar extends MaterialComponent<HTMLProps, {}> { }
 
 /** CheckBox */
-export class CheckBox extends MaterialComponent<HTMLProps, {}> {
+export interface CheckBoxProps extends HTMLProps {
+    ripple?: boolean;
+}
+export class CheckBox extends MaterialComponent<CheckBoxProps, {}> {
     getValue(): boolean;
 }
 
@@ -201,24 +216,32 @@ export class CheckBox extends MaterialComponent<HTMLProps, {}> {
 export interface RadioProps extends HTMLProps {
     name: string;
     value: string;
+    ripple?: boolean;
 }
 export class Radio extends MaterialComponent<RadioProps, {}> {
     getValue(): boolean;
 }
 
 /** IconToggle */
-export class IconToggle extends MaterialComponent<HTMLProps, {}> {
+export interface IconToggleProps extends HTMLProps {
+    ripple?: boolean;
+}
+export class IconToggle extends MaterialComponent<IconToggleProps, {}> {
     getValue(): boolean;
 }
 
 /** Switch */
-export class Switch extends MaterialComponent<HTMLProps, {}> {
+export interface SwitchProps extends HTMLProps {
+    ripple?: boolean;
+}
+export class Switch extends MaterialComponent<SwitchProps, {}> {
     getValue(): boolean;
 }
 
 /** Table */
 export interface TableProps extends HTMLProps {
     selectable?: boolean;
+    shadow?: number;
 }
 export class Table extends MaterialComponent<TableProps, {}> { }
 export interface TableCellProps extends HTMLProps {
