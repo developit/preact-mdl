@@ -5,6 +5,10 @@
 
 A collection of [Preact] Components that encapsulate Google's [Material Design Lite].
 
+**NOTE**: Material Design Lite was succeeded by [Material Components for the Web](https://material.io/develop/web/docs/migrating-from-mdl/):
+
+> Material Components for the web (MDC Web) is the successor to the Material Design Lite (MDL) project.
+
 ## Quick Start
 
 [![Edit Preact Material Design](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/6w66jzw3mn)
